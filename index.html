@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Badminton Offline</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game"></canvas>
+</div>
+
+<div id="loading"><div class="logo">BADMINTON</div><div class="bar"><i id="loading-bar"></i></div><p>Loading...</p></div>
+
+<div id="menu" class="panel hidden">
+  <div class="card">
+    <h1>BADMINTON</h1>
+    <div class="sub">OFFLINE EDITION</div>
+    <div class="row"><label>Opponent</label><div id="opt-level" class="chips"></div></div>
+    <div class="row"><label>Arena</label><div id="opt-arena" class="arenas"></div></div>
+    <div class="row"><label>First to</label><div id="opt-points" class="chips"></div></div>
+    <div class="row inline">
+      <button id="opt-sfx" class="chip"></button>
+      <button id="opt-music" class="chip"></button>
+      <button id="opt-touch" class="chip"></button>
+    </div>
+    <button id="btn-play" class="big">PLAY</button>
+    <div class="help">
+      <b>Keyboard:</b> &larr; &rarr; / A D move &nbsp;|&nbsp; J short (drop) &nbsp;|&nbsp; K long (clear) &nbsp;|&nbsp; L / Space smash &nbsp;|&nbsp; Esc pause<br>
+      Hit the shuttle when it is near your racket. Land hits to fill the gauge &mdash; a full gauge gives you a <b>Power Smash</b>.
+    </div>
+  </div>
+</div>
+
+<div id="hud-btns" class="hidden"><button id="btn-pause" aria-label="Pause"></button></div>
+
+<div id="touch" class="hidden">
+  <div class="grp left">
+    <button id="t-left"  aria-label="Left"></button>
+    <button id="t-right" aria-label="Right"></button>
+  </div>
+  <div class="grp right">
+    <button id="t-smash" aria-label="Smash"></button>
+    <button id="t-long"  aria-label="Long hit"></button>
+    <button id="t-short" aria-label="Short hit"></button>
+  </div>
+</div>
+
+<div id="pause" class="panel hidden"><div class="card small">
+  <h2>PAUSED</h2>
+  <button id="btn-resume" class="big">RESUME</button>
+  <button id="btn-quit" class="big alt">QUIT TO MENU</button>
+</div></div>
+
+<div id="result" class="panel hidden"><div class="card small">
+  <h2 id="result-title"></h2>
+  <div id="result-score"></div>
+  <div id="result-stats"></div>
+  <button id="btn-again" class="big">PLAY AGAIN</button>
+  <button id="btn-menu" class="big alt">MENU</button>
+</div></div>
+
+<div id="rotate">Rotate your device to landscape</div>
+
+<script src="assets/js/bodydata.js"></script>
+<script src="js/spine.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
